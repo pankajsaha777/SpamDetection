@@ -32,6 +32,12 @@ X = cv.fit_transform(corpus).toarray()
 y=pd.get_dummies(messages['label'])
 y=y.iloc[:,1].values
 
+#checking model accuracy
+from sklearn.metrics import confusion_matrix
+conf_mat = confusion_matrix(y_test,y_pred)
+
+from sklearn.metrics import accuracy_score
+accuracy = accuracy_score(y_test,y_pred)
 
 # Train Test Split
 
